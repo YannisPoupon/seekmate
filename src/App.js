@@ -10,6 +10,8 @@ import Rooms from './components/rooms/Rooms'
 import Roomslist from './components/roomslist/Roomslist';
 import Profile from './components/profile/Profile';
 import CreateRoom from './components/createroom/CreateRoom';
+import Chats from './components/chats/Chats';
+import Login from "./components/login/Login"
 
 
 
@@ -22,6 +24,8 @@ function App() {
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/roomslist" element={<Roomslist />} />
+              <Route path="chats" element={<Chats/>} />
+              <Route path="/login" element={<Login/>}/>
               <Route path="/room/:id" element={<Rooms />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/createroom" element={<CreateRoom />} />

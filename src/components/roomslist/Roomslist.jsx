@@ -12,12 +12,12 @@ const Roomslist = () => {
         },
         {
             id: 2,
-            name: 'Room1',
+            name: 'Room2',
             desciption: '',
             nb_max_users: 6,
             users: [{ name: 'toto' }, { name: 'tata' }],
         }
-    ];    
+    ];
     const roomsList = rooms.map((room) => {
         return <ListGroup.Item action href={`/room/${room.id}`}> { room.name }  </ListGroup.Item>;
       })
