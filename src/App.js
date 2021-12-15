@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+// import Chats from './components/chats/Chats';
+// import Navbar from './components/navbar/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import { render } from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from './contexts/AuthContext';
+import Home from './components/home/Home'
+import Rooms from './components/rooms/Rooms'
+import Roomslist from './components/roomslist/Roomslist';
+import Profile from './components/profile/Profile';
+import CreateRoom from './components/createroom/CreateRoom';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <AuthProvider>
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/roomslist" element={<Roomslist />} />
+              <Route path="/room/:id" element={<Rooms />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/createroom" element={<CreateRoom />} />
+          </Routes>
+        </AuthProvider>
+    </BrowserRouter>,
+    </>
   );
 }
 
